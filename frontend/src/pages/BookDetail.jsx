@@ -10,7 +10,7 @@ const BookDetail = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/books/${id}`)
+      .get(`${BACKEND_URL}/api/books/${id}`)
       .then((res) => {
         setBook(res.data);
         setLoading(false);

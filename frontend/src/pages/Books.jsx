@@ -32,7 +32,7 @@ const Books = () => {
 
   const fetchBooks = () => {
     axios
-      .get("http://localhost:5000/api/books")
+      .get("${BACKEND_URL}/api/books")
       .then((res) => {
         setBooks(res.data);
         setGenres(
@@ -83,7 +83,7 @@ const Books = () => {
   const handleAddBook = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/api/books", newBook)
+      .post("${BACKEND_URL}/api/books", newBook)
       .then((res) => {
         setBooks((prevBooks) => [...prevBooks, res.data]);
         setNewBook({

@@ -8,7 +8,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/books/stats")
+      .get("${BACKEND_URL}/api/books/stats")
       .then((response) => {
         setStats(response.data);
         setLoading(false);
